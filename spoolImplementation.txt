@@ -1,0 +1,33 @@
+        title        |     title      |       name       | salary 
+---------------------+----------------+------------------+--------
+ UI-IMPROVEMENTS     | Python-Dev     | Donald Davis     |  40000
+ UI-IMPROVEMENTS     | Javascript-Dev | Albert Jones     |  30000
+ UI-IMPROVEMENTS     | Web Designer   | Anthony Williams |  20000
+ DATABASE-MANAGEMENT | IT-Spec        | David Clark      |  10000
+ DATABASE-MANAGEMENT | SQL-Dev        | John Smith       |  20000
+ DESKTOP-APP         | C++-Dev        | Andrew Martin    |  70000
+ DESKTOP-APP         | C++-Dev        | Bernard Johnson  |  70000
+(7 rows)
+
+       name        |        title        |     title      | start_date | salary 
+-------------------+---------------------+----------------+------------+--------
+ Austin Green      | DESKTOP-APP         | C++-Dev        | 2021-12-08 |  70000
+ Benjamin Thomas   | DESKTOP-APP         | Python-Dev     | 2021-12-08 |  60000
+ Benjamin Thomas   | UI-IMPROVEMENTS     | Python-Dev     | 2021-12-08 |  40000
+ Christopher White | JAVA-APP            | Java-Dev       | 2021-12-08 |  50000
+ Daniel Lee        | JAVA-APP            | Java-Dev       | 2021-12-08 |  50000
+ Dominick Ramirez  | JAVA-APP            | Java-Dev       | 2021-12-08 |  50000
+ Joshua Moore      | DATABASE-MANAGEMENT | SQL-Dev        | 2021-12-08 |  20000
+ Lucas Miller      | DATABASE-MANAGEMENT | SQL-Dev        | 2021-12-08 |  20000
+ Paul Adams        | UI-IMPROVEMENTS     | Javascript-Dev | 2021-12-08 |  30000
+ Ryan Wilson       | DATABASE-MANAGEMENT | SQL-Dev        | 2021-12-08 |  20000
+ Scott Young       | DATABASE-MANAGEMENT | IT-Spec        | 2021-12-08 |  10000
+(11 rows)
+
+  name  |     name      |        title        |   sum    
+--------+---------------+---------------------+----------
+ Amazon | Dorian Foster | DESKTOP-APP         | 21000.00
+ Amazon | Dorian Foster | UI-IMPROVEMENTS     | 13500.00
+ Amazon | Dorian Foster | DATABASE-MANAGEMENT |  4500.00
+(3 rows)
+

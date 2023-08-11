@@ -1,0 +1,38 @@
+       name        |        title        |     title      | start_date | salary |     name      |     phone      
+-------------------+---------------------+----------------+------------+--------+---------------+----------------
+ Austin Green      | DESKTOP-APP         | C++-Dev        | 2021-12-08 |  70000 | Dorian Foster | (800)-200-3200
+ Benjamin Thomas   | DESKTOP-APP         | Python-Dev     | 2021-12-08 |  60000 | Dorian Foster | (800)-200-3200
+ Benjamin Thomas   | UI-IMPROVEMENTS     | Python-Dev     | 2021-12-08 |  40000 | Dorian Foster | (800)-200-3200
+ Christopher White | JAVA-APP            | Java-Dev       | 2021-12-08 |  50000 | Dorian Foster | (800)-200-3200
+ Daniel Lee        | JAVA-APP            | Java-Dev       | 2021-12-08 |  50000 | Dorian Foster | (800)-200-3200
+ Dominick Ramirez  | JAVA-APP            | Java-Dev       | 2021-12-08 |  50000 | Dorian Foster | (800)-200-3200
+ Joshua Moore      | DATABASE-MANAGEMENT | SQL-Dev        | 2021-12-08 |  20000 | Dorian Foster | (800)-200-3200
+ Lucas Miller      | DATABASE-MANAGEMENT | SQL-Dev        | 2021-12-08 |  20000 | Dorian Foster | (800)-200-3200
+ Paul Adams        | UI-IMPROVEMENTS     | Javascript-Dev | 2021-12-08 |  30000 | Dorian Foster | (800)-200-3200
+ Ryan Wilson       | DATABASE-MANAGEMENT | SQL-Dev        | 2021-12-08 |  20000 | Dorian Foster | (800)-200-3200
+ Scott Young       | DATABASE-MANAGEMENT | IT-Spec        | 2021-12-08 |  10000 | Dorian Foster | (800)-200-3200
+(11 rows)
+
+  name  |     name      |        title        |   sum    | ?column?  
+--------+---------------+---------------------+----------+-----------
+ Amazon | Dorian Foster | DESKTOP-APP         | 21000.00 | 119000.00
+ Amazon | Dorian Foster | UI-IMPROVEMENTS     | 13500.00 |  76500.00
+ Amazon | Dorian Foster | DATABASE-MANAGEMENT |  4500.00 |  25500.00
+(3 rows)
+
+  name  |     name      |   sum    | ?column?  
+--------+---------------+----------+-----------
+ Amazon | Dorian Foster | 39000.00 | 221000.00
+(1 row)
+
+       name       |     title      |    name    
+------------------+----------------+------------
+ Donald Davis     | Python-Dev     | Jeff Bezos
+ Albert Jones     | Javascript-Dev | Jeff Bezos
+ Anthony Williams | Web Designer   | Jeff Bezos
+ David Clark      | IT-Spec        | Jeff Bezos
+ John Smith       | SQL-Dev        | Jeff Bezos
+ Andrew Martin    | C++-Dev        | Jeff Bezos
+ Bernard Johnson  | C++-Dev        | Jeff Bezos
+(7 rows)
+

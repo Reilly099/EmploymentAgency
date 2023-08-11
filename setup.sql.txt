@@ -1,0 +1,181 @@
+CREATE DATABASE EMPLOYMENT_AGENCY;
+\c employment_agency
+
+CREATE TABLE CLIENT (
+    Client_ID int primary key,
+    Name VARCHAR(30)
+);
+
+CREATE TABLE COMPANY (
+    Company_ID int primary key,
+    Name VARCHAR(30),
+    Client_ID int,
+    FOREIGN KEY (Client_ID) REFERENCES CLIENT(Client_ID)
+);
+
+CREATE TABLE CONTACT (
+    Contact_ID int primary key,
+    Name VARCHAR(20),
+    Email VARCHAR(30),
+    Phone CHAR(14),
+    Company_ID int,
+    FOREIGN KEY (Company_ID) REFERENCES COMPANY(Company_ID)
+);
+
+CREATE TABLE JOB (
+    Job_ID int primary key,
+    Title VARCHAR(20),
+    Description VARCHAR(128),
+    Company_ID int,
+    FOREIGN KEY (Company_ID) REFERENCES COMPANY(Company_ID)
+);
+
+CREATE TABLE EMPLOYEE (
+    Employee_ID int primary key,
+    Name VARCHAR(20),
+    Expertise VARCHAR(20),
+    Employed CHAR(1)
+);
+
+CREATE TABLE POSITION (
+    Position_ID int primary key,
+    Title VARCHAR(20),
+    Filled CHAR(1),
+    Expertise VARCHAR(20),
+    Start_Date DATE,
+    Salary int,
+    Job_ID int,
+    Employee_ID int UNIQUE REFERENCES Employee(Employee_ID),
+    FOREIGN KEY (Job_ID) REFERENCES JOB(Job_ID)
+);
+
+insert into CLIENT values (1,'Jeff Bezos');
+insert into COMPANY values (1, 'Amazon', 1);
+insert into CONTACT values (1, 'Dorian Foster', 
+'recruiting@amazon.com', '(800)-200-3200', 1);
+
+insert into EMPLOYEE values (1, 'John Smith', 'SQL', 'Y');
+insert into EMPLOYEE values (2, 'Anthony Williams', 'Web-Design', 'Y');
+insert into EMPLOYEE values (3, 'Bernard Johnson', 'C++', 'Y');
+insert into EMPLOYEE values (4, 'Albert Jones', 'Javascript', 'Y');
+insert into EMPLOYEE values (5, 'Lucas Miller', 'SQL', 'N');
+insert into EMPLOYEE values (6, 'Donald Davis', 'Python', 'Y');
+insert into EMPLOYEE values (7, 'Ryan Wilson', 'SQL', 'N');
+insert into EMPLOYEE values (8, 'Benjamin Thomas', 'Python', 'N');
+insert into EMPLOYEE values (9, 'Joshua Moore', 'SQL', 'N');
+insert into EMPLOYEE values (10, 'Andrew Martin', 'C++', 'Y');
+insert into EMPLOYEE values (11, 'Daniel Lee', 'Java', 'N');
+insert into EMPLOYEE values (12, 'Christopher White', 'Java', 'N');
+insert into EMPLOYEE values (13, 'Dominick Ramirez', 'Java', 'N');
+insert into EMPLOYEE values (14, 'David Clark', 'IT', 'Y');
+insert into EMPLOYEE values (15, 'Scott Young', 'IT', 'N');
+insert into EMPLOYEE values (16, 'Paul Adams', 'Javascript', 'N');
+insert into EMPLOYEE values (17, 'Austin Green', 'C++', 'N');
+
+insert into JOB values(1, 'UI-IMPROVEMENTS', 'Looking
+for a web-designer(5), javascript developer(2), and a 
+python programmer(5)', 1);
+
+insert into POSITION values(1, 'Web Designer', 'Y', 'Web-Design', '2021-12-08',
+20000, 1, 2);
+insert into POSITION values(2, 'Web Designer', 'N', 'Web-Design', '2021-12-08',
+20000, 1);
+insert into POSITION values(3, 'Web Designer', 'N', 'Web-Design', '2021-12-08',
+20000, 1);
+insert into POSITION values(4, 'Web Designer', 'N', 'Web-Design', '2021-12-08',
+20000, 1);
+insert into POSITION values(5, 'Web Designer', 'N', 'Web-Design', '2021-12-08',
+20000, 1);
+
+insert into POSITION values(6, 'Javascript-Dev', 'Y', 'Javascript', '2021-12-08',
+30000, 1, 4);
+insert into POSITION values(7, 'Javascript-Dev', 'N', 'Javascript', '2021-12-08',
+30000, 1);
+
+insert into POSITION values(8, 'Python-Dev', 'Y', 'Python', '2021-12-08',
+40000, 1, 6);
+insert into POSITION values(9, 'Python-Dev', 'N', 'Python', '2021-12-08',
+40000, 1);
+insert into POSITION values(10, 'Python-Dev', 'N', 'Python', '2021-12-08',
+40000, 1);
+insert into POSITION values(11, 'Python-Dev', 'N', 'Python', '2021-12-08',
+40000, 1);
+insert into POSITION values(12, 'Python-Dev', 'N', 'Python', '2021-12-08',
+40000, 1);
+
+insert into JOB values(2, 'DATABASE-MANAGEMENT', 'Looking
+for SQL developer(6) and IT specialist(4)', 1);
+
+insert into POSITION values(13, 'SQL-Dev', 'Y', 'SQL', '2021-12-08',
+20000, 2, 1);
+insert into POSITION values(14, 'SQL-Dev', 'N', 'SQL', '2021-12-08',
+20000, 2);
+insert into POSITION values(15, 'SQL-Dev', 'N', 'SQL', '2021-12-08',
+20000, 2);
+insert into POSITION values(16, 'SQL-Dev', 'N', 'SQL', '2021-12-08',
+20000, 2);
+insert into POSITION values(17, 'SQL-Dev', 'N', 'SQL', '2021-12-08',
+20000, 2);
+insert into POSITION values(18, 'SQL-Dev', 'N', 'SQL', '2021-12-08',
+20000, 2);
+
+insert into POSITION values(19, 'IT-Spec', 'Y', 'IT', '2021-12-08',
+10000, 2, 14);
+insert into POSITION values(20, 'IT-Spec', 'N', 'IT', '2021-12-08',
+10000, 2);
+insert into POSITION values(21, 'IT-Spec', 'N', 'IT', '2021-12-08',
+10000, 2);
+insert into POSITION values(22, 'IT-Spec', 'N', 'IT', '2021-12-08',
+10000, 2);
+
+insert into JOB values(3, 'JAVA-APP', 'Looking
+for java developer(6)', 1);
+
+insert into POSITION values(23, 'Java-Dev', 'N', 'Java', '2021-12-08',
+50000, 3);
+insert into POSITION values(24, 'Java-Dev', 'N', 'Java', '2021-12-08',
+50000, 3);
+insert into POSITION values(25, 'Java-Dev', 'N', 'Java', '2021-12-08',
+50000, 3);
+insert into POSITION values(26, 'Java-Dev', 'N', 'Java', '2021-12-08',
+50000, 3);
+insert into POSITION values(27, 'Java-Dev', 'N', 'Java', '2021-12-08',
+50000, 3);
+insert into POSITION values(28, 'Java-Dev', 'N', 'Java', '2021-12-08',
+50000, 3);
+
+insert into JOB values(4, 'DESKTOP-APP', 'Looking
+for C++ developer(10) and Python Programmer(5)', 1);
+
+insert into POSITION values(29, 'C++-Dev', 'Y', 'C++', '2021-12-08',
+70000, 4, 3);
+insert into POSITION values(30, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(31, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(32, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(33, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(34, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(35, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(36, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(37, 'C++-Dev', 'N', 'C++', '2021-12-08',
+70000, 4);
+insert into POSITION values(38, 'C++-Dev', 'Y', 'C++', '2021-12-08',
+70000, 4, 10);
+
+insert into POSITION values(39, 'Python-Dev', 'N', 'Python', '2021-12-08',
+60000, 4);
+insert into POSITION values(40, 'Python-Dev', 'N', 'Python', '2021-12-08',
+60000, 4);
+insert into POSITION values(41, 'Python-Dev', 'N', 'Python', '2021-12-08',
+60000, 4);
+insert into POSITION values(42, 'Python-Dev', 'N', 'Python', '2021-12-08',
+60000, 4);
+insert into POSITION values(43, 'Python-Dev', 'N', 'Python', '2021-12-08',
+60000, 4);
+
